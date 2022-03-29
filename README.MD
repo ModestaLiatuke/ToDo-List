@@ -4,9 +4,7 @@
 
 This project is for educational porpuses only. Pull request are welcome, but priority for project authors! Thank you for your cooperation!
 
-Site published at: https://modestaliatuke.github.io/9-cake/
-
-Design: [Cake](https://cdn.discordapp.com/attachments/850245533838868480/850247442922340382/unknown.png)
+Site published at: https://modestaliatuke.github.io/ToDo-List/
 
 ## Project features
 
