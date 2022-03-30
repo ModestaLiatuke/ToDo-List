@@ -14,9 +14,24 @@ const messages = (message, status) => {
     }, 8000)
 }
 
+const transferData = async (url, method = 'GET', data = {}) => {
+    let options = {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    if (method != 'GET')
+        options.body = JSON.stringify(data)
+
+    const resp = await fetch(url, options)
+
+    return resp.json()
+}
+
+
 const getData = () => {
-    fetch(url)
-        .then(resp => resp.json())
+    transferData(url)
         .then(resp => {
 
             if (resp.status === 'success') {
@@ -50,10 +65,7 @@ const getData = () => {
                 document.querySelectorAll('.mark-done').forEach(element => {
                     let id = element.parentElement.getAttribute('data-id')
                     element.addEventListener('click', () => {
-                        fetch(url + '/mark-done/' + id, {
-                            method: 'PUT'
-                        })
-                            .then(resp => resp.json())
+                        transferData(url + '/mark-done/' + id, 'PUT')
                             .then(resp => {
                                 if (resp.status === 'success') {
                                     getData()
@@ -68,10 +80,7 @@ const getData = () => {
                     let id = element.parentElement.getAttribute('data-id')
 
                     element.addEventListener('click', () => {
-                        fetch(url + '/delete-todo/' + id, {
-                            method: 'DELETE'
-                        })
-                            .then(resp => resp.json())
+                        transferData(url + '/delete-todo/' + id, 'DELETE')
                             .then(resp => {
                                 if (resp.status === 'success') {
                                     getData()
@@ -86,8 +95,7 @@ const getData = () => {
 
                     element.addEventListener('click', () => {
 
-                        fetch(url + '/' + id)
-                            .then(resp => resp.json())
+                        transferData(url + '/' + id)
                             .then(resp => {
                                 if (resp.status === 'success') {
                                     mainInput.value = resp.data.task
@@ -111,8 +119,10 @@ const getData = () => {
             }
         })
 }
+window.addEventListener('load', () => {
+    getData()
+})
 
-getData()
 
 addButton.addEventListener('click', () => {
     let task = mainInput.value
@@ -133,14 +143,7 @@ addButton.addEventListener('click', () => {
         method = 'PUT'
     }
 
-    fetch(route, {
-        method: method,
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ task })
-    })
-        .then(resp => resp.json())
+    transferData(route, method, { task })
         .then(resp => {
             if (resp.status === 'success') {
                 getData()
@@ -162,14 +165,7 @@ document.querySelector('#mass-delete').addEventListener('click', () => {
         ids.push(element.parentElement.getAttribute('data-id'))
     })
 
-    fetch(url + '/mass-delete', {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ ids })
-    })
-        .then(resp => resp.json())
+    transferData(url + '/mass-delete', 'DELETE', { ids })
         .then(resp => {
             if (resp.status === 'success') {
                 getData()
