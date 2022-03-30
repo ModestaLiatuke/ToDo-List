@@ -25,7 +25,7 @@ Backend -> index.js -> last lines of the code: app.listen(3001, () => {})
 
 ## Project start instuctions
 
-After instalation frontend and backend terminals must be started separetely:
+After instalation Front-end and Back-end terminals must be started separetely:
 $ npm run start
 
 ## Authors
