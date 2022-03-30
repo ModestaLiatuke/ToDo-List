@@ -7,14 +7,11 @@ This project is for educational porpuses only. Pull request are welcome, but pri
 ## Project features
 
 -   Github pages
--   HTML form
+-   HTML
 -   CSS
 -   Progress bar animation
 -   Javascript
-
-## Authors
-
-Modesta [Github](https://github.com/ModestaLiatuke)
+-   dNode.js
 
 ## Instalation instructions
 
@@ -29,3 +26,12 @@ Frontend -> package.json -> "scripts": {"start": "dead-server --port=3000 --host
 Port for Back-end is set to 3001. If you want to change port go:
 
 Backend -> index.js -> last lines of the code: app.listen(3001, () => {})
+
+## Project start instuctions
+
+After instalation frontend and backend terminals must be started separetely:
+$ npm run start
+
+## Authors
+
+Modesta [Github](https://github.com/ModestaLiatuke)
