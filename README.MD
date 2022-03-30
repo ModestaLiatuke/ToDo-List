@@ -11,13 +11,11 @@ This project is for educational porpuses only. Pull request are welcome, but pri
 -   CSS
 -   Progress bar animation
 -   Javascript
--   dNode.js
+-   Node.js
 
 ## Instalation instructions
 
-Front-end and back-end must be installed separetely;
-
-$ npm install
+Front-end and back-end must be installed separetely: $ npm install
 
 Port for Front-end is set to 3000. If you want to change port go:
 
