@@ -1,9 +1,13 @@
 body {
-    background: rgb(253, 212, 212);
+    background-image: url('https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvdjcwMS10YW5nLTAxZC1mbG9yYWxfMS5qcGc.jpg?s=GjEd4n6zlq4I6HjWXgdpvq5Tz79lMNi8vzLgJoAIWYI');
+    /* background-repeat: no-repeat; */
+    background-position: center center;
+    background-size: cover;
+    min-height: 100%;
 }
 
 .todo-container {
-    background: rgb(252, 114, 114);
+    background: rgb(253, 143, 143);
     max-width: 600px;
     margin-top: 4rem;
     border-radius: 20px;
@@ -37,7 +41,7 @@ body {
 }
 
 .edit-mode {
-    background-color: rgba(255, 255, 0, 0.445);
+    background-color: rgba(236, 236, 225, 0.445);
 }
 
 .mark-done {
